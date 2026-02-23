@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { SignupPage } from "../page-Objects/SignupPage";
-import { LoginPage } from "../page-Objects/LoginPage";
-import { Helper } from "../util/helper";
+import { SignupPage } from "../../src/pages/SignupPage";
+import { LoginPage } from "../../src/pages/LoginPage";
+import { Helper } from "../../src/util/helper";
+import { Assert } from 'node:assert';
 
 test.describe('User Registration Tests', () => {
      let signupPage;
@@ -37,6 +38,17 @@ test.describe('User Registration Tests', () => {
         // 4. Assertion: Verify registration success 
         // await expect(page).toHaveURL(/.*signin/); 
         await signupPage.verifyNavigateToLoginPage();
+
+    //     //Validate api response after successful registration
+    //     const apiResponse = await page.waitForResponse(response => {
+    //         response.url.include('/users');
+    //         response.status(201)
+    //     })
+
+    //     const responseBody = await apiResponse.json();
+    //   expect(apiResponse.status()).toBe(201);
+    //   expect(responseBody.userName).toBe(userData.username);
+    //   expect(responseBody.userEmail).toBe(userData.email);
     });
 
     test('Verify all fields are required', async ({ page }) => {

@@ -1,10 +1,11 @@
 import { expect } from "@playwright/test";
-import { BasePage } from "../util/BasePage";
+import { BasePage } from "../../src/util/BasePage";
 
 export class PackagesPage extends BasePage{
     constructor(page){
         super(page);
         this.packagesLink = page.locator("//a[text()='Packages']");
+        // page.getByRole("link", {'name: Packages'});
         this.viewDetailBtn = page.locator("a:has-text('View Detail')");
 
         this.packageCards = page.locator("//div[contains(@class,'MuiPaper-root')]");

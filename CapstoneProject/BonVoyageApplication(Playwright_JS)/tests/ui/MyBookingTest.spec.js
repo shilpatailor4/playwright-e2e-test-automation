@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
-import { MyBookingPage } from '../page-Objects/MyBookingPage';
-const {LoginPage} = require("../page-Objects/LoginPage")
-import authData from "../auth/testData.json";
+import { MyBookingPage } from '../../src/pages/MyBookingPage';
+import {LoginPage} from "../../src/pages/LoginPage";
+import authData from "../../src/testData/testData.json";
 
 test.describe('MyBooking functionality test', () => {
 
@@ -12,7 +12,7 @@ test.describe('MyBooking functionality test', () => {
         myBookingPage = new MyBookingPage(page);
 
         await loginPage.navigate();
-        await loginPage.login(authData.validUser.email, authData.validUser.password);
+        await loginPage.login(process.env.USER_EMAIL, process.env.USER_PASSWORD);
         await loginPage.verifyLogoutOption();
     });
 

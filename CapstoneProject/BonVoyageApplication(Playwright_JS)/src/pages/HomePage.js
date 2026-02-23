@@ -1,10 +1,11 @@
 import { Locator, Page } from "@playwright/test";
+import { BasePage } from "../../src/util/BasePage";
 import { LoginPage } from "./LoginPage";
 import { PackagesPage } from "./PackagesPage";
 import { error } from "node:console";
-import { FAQPage } from "./FAQPage";
+import {FAQPage} from "./FAQPage";
 
-export class HomePage{
+export class HomePage extends BasePage{
     constructor(page){
         this.page = page;
         this.loginSignupBtn = page.locator("//button[text()='Login / SignUp']");

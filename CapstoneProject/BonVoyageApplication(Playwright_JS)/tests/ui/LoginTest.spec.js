@@ -1,6 +1,5 @@
 import {test, expect} from '@playwright/test'
-const {LoginPage} = require("../page-Objects/LoginPage")
-import authData from "../auth/testData.json"
+import { LoginPage  } from '../../src/pages/LoginPage';
 
 test.describe('Login Page Assertions', () => {
     let loginPage;
@@ -18,8 +17,9 @@ test.describe('Login Page Assertions', () => {
     test('Successful Login displays Logout option', async () => {
         //Access data using the keys from your JSON file
         await loginPage.login(
-            authData.validUser.email, 
-            authData.validUser.password
+         process.env.USER_EMAIL,
+         process.env.USER_PASSWORD
+
         );
         await loginPage.verifyLogoutOption();
     });

@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { FAQPage } from "../page-Objects/FAQPage.js";
+import { FAQPage  } from '../../src/pages/FAQPage';
 
 test.describe('FAQ Bulk Validation', () => {
 

@@ -1,8 +1,8 @@
 import {test, expect} from '@playwright/test'
-const {LoginPage} = require("../page-Objects/LoginPage")
-import { PackagesPage } from "../page-Objects/PackagesPage";
-import { PackageDetailPage } from '../page-Objects/PackageDetailPage';
-import authData from "../auth/testData.json"
+import {LoginPage} from "../../src/pages/LoginPage";
+import { PackagesPage } from "../../src/pages/PackagesPage";
+import { PackageDetailPage } from '../../src/pages/PackageDetailPage';
+import authData from "../../src/testData/testData.json";
 
 test.describe('Packages Comparison Tests', () => {
 
@@ -19,10 +19,7 @@ test.describe('Packages Comparison Tests', () => {
         await loginPage.navigate();
 
         // 2. Access data using the keys from your JSON file
-        await loginPage.login(
-            authData.validUser.email, 
-            authData.validUser.password
-        );
+        await loginPage.login(process.env.USER_EMAIL, process.env.USER_PASSWORD);
 
         // 3. Verify the user is loggedIn
         await loginPage.verifyLogoutOption();

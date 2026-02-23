@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { BasePage } from "../util/BasePage";
+import { BasePage } from "../../src/util/BasePage";
 
 export class SignupPage extends BasePage{
     constructor(page) {
@@ -31,4 +31,6 @@ export class SignupPage extends BasePage{
     async verifyNavigateToLoginPage(){
         await expect(this.page).toHaveURL(/.*signin/); 
     }
+
+    
 }

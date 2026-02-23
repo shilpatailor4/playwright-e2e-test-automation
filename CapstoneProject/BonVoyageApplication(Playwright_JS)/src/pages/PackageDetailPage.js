@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { BasePage } from "../util/BasePage.js";
+import { BasePage } from "../../src/util/BasePage";
 
 export class PackageDetailPage extends BasePage{
     constructor(page){
@@ -19,6 +19,7 @@ export class PackageDetailPage extends BasePage{
 
     // Navigate to the package detail page
     async navigateToDetailPage(){
+        await this.page.waitForURL('**/packages/**');
         await expect(this.packageDetailHeaderName).toBeVisible();
         await expect(this.page).toHaveURL(/.*packages\/.*/); // Matches /packages/123      
     }

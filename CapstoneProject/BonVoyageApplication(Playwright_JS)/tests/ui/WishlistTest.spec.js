@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from "../page-Objects/LoginPage.js";
-import { PackagesPage } from "../page-Objects/PackagesPage.js";
-import { WishlistPage } from "../page-Objects/WishlistPage.js";
-import authData from "../auth/testData.json";
+import { LoginPage } from "../../src/pages/LoginPage.js";
+import { PackagesPage } from "../../src/pages/PackagesPage.js";
+import { WishlistPage } from "../../src/pages/WishlistPage.js";
+import authData from "../../src/testData/testData.json";
 
 test.describe('Wishlist Functionality Tests', () => {
     let packagesPage;
@@ -14,7 +14,7 @@ test.describe('Wishlist Functionality Tests', () => {
         wishlistPage = new WishlistPage(page);
 
         await loginPage.navigate();
-        await loginPage.login(authData.validUser.email, authData.validUser.password);
+        await loginPage.login(process.env.USER_EMAIL, process.env.USER_PASSWORD);
         await loginPage.verifyLogoutOption();
     });
 
