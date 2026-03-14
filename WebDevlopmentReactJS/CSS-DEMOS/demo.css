@@ -1,0 +1,57 @@
+/* h1{
+    text-align: center;
+}
+
+h3{
+    color: chartreuse;
+}
+
+.demo{
+    color: red;
+}
+
+#check{
+    color:blue;
+}
+
+p{
+    color: blueviolet;
+} */
+
+*{
+    color: brown;
+}
+
+.check{
+    color: green;
+}
+
+#demo{
+    color: red;
+}
+
+p{
+    color: purple;
+}
+
+/* div p{
+    color: red;
+} */
+
+ul>li{
+    color: blue;
+}
+
+ol>li{
+    background-color: green;
+}
+
+h1~p{
+    color: red;
+}
+
+
+div {
+    color: red;
+    background-color: yellow;
+}
